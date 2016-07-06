@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
+import Nav from './components/nav.jsx'
+import Main from './components/main.jsx'
 
 class App extends Component {
   render() {
     return (
-      <div>This is the app</div>
+      <div>
+        <Nav />
+        <Main />
+      </div>
       )
   }
 }
