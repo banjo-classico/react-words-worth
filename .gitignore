@@ -39,3 +39,6 @@ jspm_packages
 .env
 
 public/bundle.js
+
+public/.DS_Store
+.DS_Store

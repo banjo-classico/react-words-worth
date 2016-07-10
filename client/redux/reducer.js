@@ -10,6 +10,8 @@ export default function reducer (state=INITIAL_STATE, action) {
   let newState = clone(state)
 
   switch(action.type) {
+    case 'POPULATE_STATE' :
+      break
     case 'SET_RANDOM_WORD' :
       newState.word = action.word
       break
