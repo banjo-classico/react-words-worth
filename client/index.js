@@ -7,6 +7,7 @@ import App from './app.jsx'
 import Login from './components/login.jsx'
 import Game from './components/main.jsx'
 import io from 'socket.io-client'
+import { populateState } from './redux/action-creators'
 
 const socket = io()
 const store = configureStore(socket)
@@ -16,7 +17,7 @@ socket.on('action', (action) => {
 })
 
 socket.on('populate', () => {
-  store.dispatch({type: 'POPULATE_STATE'})
+  store.dispatch(populateState(store.getState()))
 })
 
 render(

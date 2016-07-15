@@ -3,10 +3,11 @@ export default (io) => {
 
     console.log('connection made')
 
-    socket.emit('populate')
+    socket.broadcast.emit('populate')
 
     socket.on('action', (action) => {
-      socket.emit('action', action)
+      action.socket = false
+      io.emit('action', action)
     })
 
     socket.on('disconnect', () => {

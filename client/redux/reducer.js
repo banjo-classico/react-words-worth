@@ -11,6 +11,7 @@ export default function reducer (state=INITIAL_STATE, action) {
 
   switch(action.type) {
     case 'POPULATE_STATE' :
+      newState = action.state
       break
     case 'SET_RANDOM_WORD' :
       newState.word = action.word

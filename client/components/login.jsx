@@ -21,7 +21,6 @@ class Login extends Component {
     return (
       <div>
         <h1>Word's Worth</h1>
-        <img src='../images/penguin.png'/>
         <form onSubmit={ this.handleSubmit.bind(this) }>
           <input id='namebox' type='text' placeholder='Enter player name' ></input>
         </form>
