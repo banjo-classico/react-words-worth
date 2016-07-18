@@ -18,7 +18,6 @@ export function addPlayer(id, player) {
 export function removePlayer(id) {
   return {
     type: 'REMOVE_PLAYER',
-    socket: true,
     id
   }
 }

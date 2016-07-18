@@ -23,6 +23,7 @@ export default function reducer (state=INITIAL_STATE, action) {
 
     case 'REMOVE_PLAYER' :
       delete newState.players[action.id]
+      break
 
     case 'UPDATE_SCORE' :
       newState.players[action.id].score = action.score
