@@ -15,6 +15,14 @@ export function addPlayer(id, player) {
   }
 }
 
+export function removePlayer(id) {
+  return {
+    type: 'REMOVE_PLAYER',
+    socket: true,
+    id
+  }
+}
+
 export function updateScore(id, score) {
   return {
     type: 'UPDATE_SCORE',

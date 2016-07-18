@@ -2,6 +2,7 @@ export default (io) => {
   io.on('connection', (socket) => {
 
     console.log('connection made')
+    socket.emit('connected')
 
     socket.broadcast.emit('populate')
 
@@ -12,6 +13,7 @@ export default (io) => {
 
     socket.on('disconnect', () => {
       console.log('SOCKET disconnected')
+      socket.broadcast.emit('remove', socket.id)
     })
 
   })
