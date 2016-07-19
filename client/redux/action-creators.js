@@ -6,6 +6,13 @@ export function setRandomWord(word) {
   }
 }
 
+export function getRandom() {
+  return {
+    type: 'GET_RANDOM',
+    socket: true
+  }
+}
+
 export function addPlayer(id, player) {
   return {
     type: 'ADD_PLAYER',
@@ -55,3 +62,11 @@ export function compare(word, id) {
     id
   }
 }
+
+export function reset() {
+  return {
+    type: 'RESET_GAME',
+    socket: true
+  }
+}
+

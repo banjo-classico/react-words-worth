@@ -24,11 +24,18 @@ export default (io) => {
           })
           break
 
+        case 'GET_RANDOM' :
+          getRandomWord(function(err, res) {
+            random = res.word
+            io.emit('random', res.word)
+          })
+
         default :
           socket.broadcast.emit('action', action)
           break
       }
     })
+
 
     socket.on('disconnect', () => {
       console.log('SOCKET disconnected')

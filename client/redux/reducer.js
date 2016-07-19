@@ -16,6 +16,9 @@ export default function reducer (state=INITIAL_STATE, action) {
     case 'SET_RANDOM_WORD' :
       newState.word = action.word
       break
+
+    case 'GET_RANDOM' :
+      break
       
     case 'ADD_PLAYER' :
       newState.players[action.id] = action.player
@@ -31,6 +34,13 @@ export default function reducer (state=INITIAL_STATE, action) {
 
     case 'ADD_USED_WORD' :
       newState.used.push(action.used)
+      break
+
+    case 'RESET_GAME' :
+      Object.keys(newState.players).map((key) => {
+        return newState.players[key].score = 0
+      })
+      newState.used = []
       break
   }
   return newState

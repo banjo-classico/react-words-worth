@@ -15,7 +15,7 @@ class Main extends Component {
       {
         (Object.keys(this.props.players).includes(this.props.socket.id))
         ? <div>
-            <Nav />
+            <Nav reset={ this.props.reset } getRandom={this.props.getRandom }/>
             <div id='main'>
               <Players players={ this.props.players } keys={ Object.keys(this.props.players) } />
               <Centre word={ this.props.word } 

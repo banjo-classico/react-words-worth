@@ -17,9 +17,7 @@ socket.on('action', (action) => {
 })
 
 socket.on('populate', () => {
-  store.dispatch({type: 'POPULATE_STATE',
-                  socket: true,
-                  state: store.getState()})
+  store.dispatch(populateState(store.getState()))
 })
 
 socket.on('remove', (id) => {
