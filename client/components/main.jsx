@@ -18,7 +18,9 @@ class Main extends Component {
             <Nav />
             <div id='main'>
               <Players players={ this.props.players } keys={ Object.keys(this.props.players) } />
-              <Centre word={ this.props.word } addUsedWord={ this.props.addUsedWord }/>
+              <Centre word={ this.props.word } 
+                      addUsedWord={ this.props.addUsedWord } 
+                      used={ this.props.used }/>
               <UsedWords used={ this.props.used } />
             </div>
           </div>
