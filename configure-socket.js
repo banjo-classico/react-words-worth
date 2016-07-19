@@ -5,12 +5,7 @@ export default (io) => {
 
     console.log('connection made')
 
-    var random = ''
-
-    getRandomWord(function(err, res) {
-      random = res.word
-      io.emit('random', random)
-    })    
+    var random = ''   
 
     socket.broadcast.emit('populate')
 

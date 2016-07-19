@@ -7,7 +7,7 @@ import App from './app.jsx'
 import Login from './components/login.jsx'
 import Main from './components/main.jsx'
 import io from 'socket.io-client'
-import { populateState, removePlayer, updateScore, setRandomWord } from './redux/action-creators'
+import { populateState, removePlayer, updateScore, setRandomWord, getRandom } from './redux/action-creators'
 
 const socket = io()
 const store = configureStore(socket)
@@ -32,6 +32,9 @@ socket.on('update-score', (info) => {
 socket.on('random', (random) => {
   store.dispatch(setRandomWord(random))
 })
+
+console.log('STORE: ', store.getState())
+// store.getState().word === '' ? store.dispatch(getRandom()) : null
 
 function createElement(Component, props) {
   return <Component socket={ socket } {...props} />
