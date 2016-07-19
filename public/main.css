@@ -2,3 +2,34 @@
   display: flex;
   justify-content: space-between;
 }
+
+.chart {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.scorediv {
+  border-radius: 4px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: white;
+
+}
+
+#box0 {
+  background-color: tomato;
+}
+
+#box1 {
+  background-color: yellow;
+}
+
+#box2 {
+  background-color: blue;
+}
+
+#box3 {
+  background-color: teal;
+}

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Chart from './chart.jsx'
+//import Graph from './graph.jsx'
 
 class Centre extends Component {
 
@@ -18,7 +20,7 @@ class Centre extends Component {
     return (
       <div>
         <div><h1>{ this.props.random }</h1></div>
-        <div>Graph</div>
+        <Chart players={ this.props.players }/>
         <form onSubmit={ this.handleSubmit.bind(this) }>
           <input id='game-input' type='text' placeholder='put a word here'></input>
         </form>
