@@ -5,7 +5,7 @@ import {Router, Route, IndexRoute, hashHistory } from 'react-router'
 import configureStore from './redux/configure-store'
 import App from './app.jsx'
 import Login from './components/login.jsx'
-import Game from './components/main.jsx'
+import Main from './components/main.jsx'
 import io from 'socket.io-client'
 import { populateState, removePlayer } from './redux/action-creators'
 
@@ -36,7 +36,7 @@ render(
     <Router history={ hashHistory } createElement={ createElement }>
       <Route path='/' component={ App } >
         <IndexRoute component={ Login } ></IndexRoute>
-        <Route path='/main' component={ Game }></Route>
+        <Route path='/main' component={ Main }></Route>
       </Route>
     </Router>
   </Provider>, document.getElementById('app'))
