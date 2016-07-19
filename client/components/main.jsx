@@ -10,6 +10,7 @@ import Nav from './nav.jsx'
 class Main extends Component {
 
   render() {
+
     return (
       <div>
       {
@@ -22,7 +23,9 @@ class Main extends Component {
                       addUsedWord={ this.props.addUsedWord } 
                       compare={ this.props.compare }
                       used={ this.props.used }
-                      id={ this.props.socket.id }/>
+                      id={ this.props.socket.id }
+                      players={ this.props.players }/>
+
               <UsedWords used={ this.props.used } />
             </div>
           </div>
