@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import {Router, Route, IndexRoute, hashHistory } from 'react-router'
+import {Router, Route, IndexRoute, browserHistory } from 'react-router'
 import configureStore from './redux/configure-store'
 import App from './app.jsx'
 import Login from './components/login.jsx'
@@ -33,7 +33,6 @@ socket.on('random', (random) => {
   store.dispatch(setRandomWord(random))
 })
 
-console.log('STORE: ', store.getState())
 // store.getState().word === '' ? store.dispatch(getRandom()) : null
 
 function createElement(Component, props) {
@@ -42,10 +41,10 @@ function createElement(Component, props) {
 
 render(
   <Provider store={ store }>
-    <Router history={ hashHistory } createElement={ createElement }>
+    <Router history={ browserHistory } createElement={ createElement }>
       <Route path='/' component={ App } >
         <IndexRoute component={ Login } ></IndexRoute>
-        <Route path='/main' component={ Main }></Route>
+        <Route path='main' component={ Main }></Route>
       </Route>
     </Router>
   </Provider>, document.getElementById('app'))
