@@ -22,12 +22,12 @@ export function removePlayer(id) {
   }
 }
 
-export function updateScore(id, score) {
+export function updateScore(info) {
   return {
     type: 'UPDATE_SCORE',
-    socket: true,
-    id, 
-    score
+    socket: false,
+    id: info.id, 
+    score: info.score
   }
 }
 
@@ -44,5 +44,14 @@ export function populateState(state) {
     type: 'POPULATE_STATE',
     socket: true,
     state
+  }
+}
+
+export function compare(word, id) {
+  return {
+    type: 'COMPARE_TERMS',
+    socket: true,
+    word,
+    id
   }
 }

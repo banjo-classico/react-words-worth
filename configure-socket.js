@@ -1,14 +1,28 @@
+import { compare, buildTerms } from './retina'
+
 export default (io) => {
   io.on('connection', (socket) => {
 
     console.log('connection made')
-    socket.emit('connected')
+
+    const random = 'animal'    
 
     socket.broadcast.emit('populate')
 
     socket.on('action', (action) => {
       action.socket = false
-      socket.broadcast.emit('action', action)
+      switch (action.type) {
+        case 'COMPARE_TERMS' :
+          var terms = buildTerms(random, action.word)
+          compare(terms, (err, res) => {
+            io.emit('update-score', {id: action.id, score: Math.floor(res.weightedScoring)})
+          })
+          break
+
+        default :
+          socket.broadcast.emit('action', action)
+          break
+      }
     })
 
     socket.on('disconnect', () => {

@@ -6,7 +6,11 @@ class Centre extends Component {
     e.preventDefault()
     var word = document.getElementById('game-input').value
     console.log(word)
-    !(this.props.used.includes(word)) ? this.props.addUsedWord(word) : null
+    if (!this.props.used.includes(word)) {
+      this.props.addUsedWord(word)
+      this.props.compare(word, this.props.id)
+      } else { null }
+
     document.getElementById('game-input').value = ''
   }
 

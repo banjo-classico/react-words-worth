@@ -20,7 +20,9 @@ class Main extends Component {
               <Players players={ this.props.players } keys={ Object.keys(this.props.players) } />
               <Centre word={ this.props.word } 
                       addUsedWord={ this.props.addUsedWord } 
-                      used={ this.props.used }/>
+                      compare={ this.props.compare }
+                      used={ this.props.used }
+                      id={ this.props.socket.id }/>
               <UsedWords used={ this.props.used } />
             </div>
           </div>

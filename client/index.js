@@ -7,7 +7,7 @@ import App from './app.jsx'
 import Login from './components/login.jsx'
 import Main from './components/main.jsx'
 import io from 'socket.io-client'
-import { populateState, removePlayer } from './redux/action-creators'
+import { populateState, removePlayer, updateScore } from './redux/action-creators'
 
 const socket = io()
 const store = configureStore(socket)
@@ -25,6 +25,10 @@ socket.on('populate', () => {
 socket.on('remove', (id) => {
   console.log('REMOVE: ', id.slice(2))
   store.dispatch(removePlayer(id.slice(2)))
+})
+
+socket.on('update-score', (info) => {
+  store.dispatch(updateScore(info))
 })
 
 function createElement(Component, props) {

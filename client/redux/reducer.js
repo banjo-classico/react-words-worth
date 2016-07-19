@@ -26,7 +26,7 @@ export default function reducer (state=INITIAL_STATE, action) {
       break
 
     case 'UPDATE_SCORE' :
-      newState.players[action.id].score = action.score
+      newState.players[action.id].score += action.score
       break
 
     case 'ADD_USED_WORD' :
