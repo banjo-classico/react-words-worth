@@ -8,7 +8,7 @@ export default (io) => {
 
     socket.on('action', (action) => {
       action.socket = false
-      io.emit('action', action)
+      socket.broadcast.emit('action', action)
     })
 
     socket.on('disconnect', () => {
