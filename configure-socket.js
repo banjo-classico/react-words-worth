@@ -1,4 +1,4 @@
-import { compare, buildTerms } from './retina'
+import { compare, buildTerms } from './apis'
 
 export default (io) => {
   io.on('connection', (socket) => {
