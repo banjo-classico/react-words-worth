@@ -1,7 +1,7 @@
 import clone from 'clone'
 
 const INITIAL_STATE = {
-  word: '',
+  random: '',
   used: [],
   players: {}
 }
@@ -14,7 +14,7 @@ export default function reducer (state=INITIAL_STATE, action) {
       newState = action.state
       break
     case 'SET_RANDOM_WORD' :
-      newState.word = action.word
+      newState.random = action.word
       break
 
     case 'GET_RANDOM' :

@@ -54,11 +54,12 @@ export function populateState(state) {
   }
 }
 
-export function compare(word, id) {
+export function compare(word, random, id) {
   return {
     type: 'COMPARE_TERMS',
     socket: true,
     word,
+    random,
     id
   }
 }

@@ -18,7 +18,7 @@ class Main extends Component {
             <Nav reset={ this.props.reset } getRandom={this.props.getRandom }/>
             <div id='main'>
               <Players players={ this.props.players } keys={ Object.keys(this.props.players) } />
-              <Centre word={ this.props.word } 
+              <Centre random={ this.props.random } 
                       addUsedWord={ this.props.addUsedWord } 
                       compare={ this.props.compare }
                       used={ this.props.used }
@@ -39,7 +39,7 @@ class Main extends Component {
 function mapStateToProps(state) {
   return {
     players: state.players,
-    word: state.word,
+    random: state.random,
     used: state.used
   }
 }

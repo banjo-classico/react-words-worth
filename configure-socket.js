@@ -5,15 +5,13 @@ export default (io) => {
 
     console.log('connection made')
 
-    var random = ''   
-
     socket.broadcast.emit('populate')
 
     socket.on('action', (action) => {
       action.socket = false
       switch (action.type) {
         case 'COMPARE_TERMS' :
-          var terms = buildTerms(random, action.word)
+          var terms = buildTerms(action.random, action.word)
           compare(terms, (err, res) => {
             io.emit('update-score', {id: action.id, score: Math.floor(res.weightedScoring)})
           })
@@ -21,7 +19,7 @@ export default (io) => {
 
         case 'GET_RANDOM' :
           getRandomWord(function(err, res) {
-            random = res.word
+            var random = res.word
             io.emit('random', res.word)
           })
 
