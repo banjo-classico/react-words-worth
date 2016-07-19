@@ -7,7 +7,7 @@ import App from './app.jsx'
 import Login from './components/login.jsx'
 import Main from './components/main.jsx'
 import io from 'socket.io-client'
-import { populateState, removePlayer, updateScore } from './redux/action-creators'
+import { populateState, removePlayer, updateScore, setRandomWord } from './redux/action-creators'
 
 const socket = io()
 const store = configureStore(socket)
@@ -29,6 +29,10 @@ socket.on('remove', (id) => {
 
 socket.on('update-score', (info) => {
   store.dispatch(updateScore(info))
+})
+
+socket.on('random', (random) => {
+  store.dispatch(setRandomWord(random))
 })
 
 function createElement(Component, props) {

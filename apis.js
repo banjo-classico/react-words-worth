@@ -18,3 +18,15 @@ export function compare(terms, callback) {
 export function buildTerms(main, word) {
   return [{"term": main}, {"term": word}]
 }
+
+export function getRandomWord(callback) {
+  request
+    .get('http://api.wordnik.com/v4/words.json/randomWord?includePartOfSpeech=noun&minCorpusCount=4000&maxCorpusCount=-1&minDictionaryCount=8&maxDictionaryCount=-1&minLength=4&maxLength=-1&api_key=' + process.env.WORDNIK_API_KEY)
+    .end(function(err, res) {
+      if (err) {
+        console.log(err)
+      } else {
+        callback(err, res.body)
+      }
+    })
+}

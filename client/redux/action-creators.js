@@ -1,7 +1,7 @@
 export function setRandomWord(word) {
   return {
     type: 'SET_RANDOM_WORD',
-    socket: true,
+    socket: false,
     word
   }
 }

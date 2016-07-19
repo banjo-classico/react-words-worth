@@ -1,11 +1,16 @@
-import { compare, buildTerms } from './apis'
+import { compare, buildTerms, getRandomWord } from './apis'
 
 export default (io) => {
   io.on('connection', (socket) => {
 
     console.log('connection made')
 
-    const random = 'animal'    
+    var random = ''
+
+    getRandomWord(function(err, res) {
+      random = res.word
+      io.emit('random', random)
+    })    
 
     socket.broadcast.emit('populate')
 
