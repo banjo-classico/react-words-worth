@@ -13,7 +13,6 @@ class Login extends Component {
     let id = Object.keys(this.props.players).length + 1
     this.props.addPlayer(this.props.socket.id, {name, score: 0})
     console.log(this.props)
-    name = ''
     this.context.router.push('/main')
 
   }

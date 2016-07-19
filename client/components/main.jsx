@@ -8,15 +8,25 @@ import Nav from './nav.jsx'
 
 
 class Main extends Component {
+
   render() {
     return (
       <div>
-        <Nav />
-        <div id='main'>
-          <Players players={ this.props.players } keys={ Object.keys(this.props.players) } />
-          <Centre word={ this.props.word } />
-          <UsedWords used={ this.props.used } />
-        </div>
+      {
+        (Object.keys(this.props.players).includes(this.props.socket.id))
+        ? <div>
+            <Nav />
+            <div id='main'>
+              <Players players={ this.props.players } keys={ Object.keys(this.props.players) } />
+              <Centre word={ this.props.word } />
+              <UsedWords used={ this.props.used } />
+            </div>
+          </div>
+        : <div>
+            <h1>Please sign in with name</h1>
+            <a href='/'><button >Return to login</button></a>
+          </div>
+      }
       </div>
       )
   }
