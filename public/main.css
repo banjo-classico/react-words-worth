@@ -1,35 +1,61 @@
-#main, #nav {
-  display: flex;
-  justify-content: space-between;
-}
+body {
+  font-family: sans-serif;
+  text-align: center; }
 
-.chart {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-}
+.login {
+  margin-top: 200px; }
+  .login #title {
+    font-size: 70px; }
 
-.scorediv {
+#namebox {
+  border: 1px solid black;
   border-radius: 4px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  color: white;
+  width: 200px;
+  padding: 20px;
+  font-size: 20px; }
 
-}
+#nav {
+  display: flex;
+  justify-content: space-between; }
+  #nav .new-game-btn {
+    width: 150px;
+    height: 50px;
+    border: none;
+    background-color: #333;
+    color: white;
+    font-size: 14px; }
+
+#main {
+  display: flex;
+  justify-content: space-between; }
+  #main .centrebox .chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end; }
+    #main .centrebox .chart .scorediv {
+      border-radius: 4px;
+      align-items: flex-end;
+      justify-content: center;
+      color: white; }
+  #main .centrebox #game-input {
+    font-size: 14px;
+    margin-top: 10px;
+    width: 150px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px; }
+
+#players-box, #used-box {
+  margin: 30px 100px; }
 
 #box0 {
-  background-color: tomato;
-}
+  background-color: tomato; }
 
 #box1 {
-  background-color: yellow;
-}
+  background-color: gold; }
 
 #box2 {
-  background-color: blue;
-}
+  background-color: blue; }
 
 #box3 {
-  background-color: teal;
-}
+  background-color: teal; }

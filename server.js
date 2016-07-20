@@ -3,7 +3,7 @@ import express from 'express'
 import http from 'http'
 import path from 'path'
 import IO from 'socket.io'
-import configureSocket from './configure-socket'
+import configureSocket from './src/configure-socket'
 
 dotenv.config()
 

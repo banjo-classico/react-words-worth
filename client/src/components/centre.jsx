@@ -18,7 +18,7 @@ class Centre extends Component {
 
   render() {
     return (
-      <div>
+      <div className='centrebox'>
         <div><h1>{ this.props.random }</h1></div>
         <Chart players={ this.props.players }/>
         <form onSubmit={ this.handleSubmit.bind(this) }>
