@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import { makeGraph, updateGraph } from '../d3'
 
 class Chart extends Component {
 

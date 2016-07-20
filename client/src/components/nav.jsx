@@ -12,8 +12,8 @@ class Nav extends Component {
       <div className='container'>
         <div className='row'>
           <div id='nav'>
-            <h3>Word's Worth</h3>
-            <button onClick={ this.handleClick.bind(this) }>New Game</button>
+            <h3 className='nav-title'>Word's Worth</h3>
+            <button className='new-game-btn' onClick={ this.handleClick.bind(this) }>New Game</button>
           </div>
         </div>
       </div>

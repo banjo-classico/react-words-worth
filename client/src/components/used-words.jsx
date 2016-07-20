@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class UsedWords extends Component {
   render() {
     return (
-      <div>
+      <div id='used-box'>
         <h1>Used Words</h1>
         <div>
           {
