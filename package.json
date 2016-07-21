@@ -6,9 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "watchify client/src/index.js -o public/bundle.js -dv",
+    "build-client": "browserify client/src/index.js -o public/bundle.js -dv",
     "build-css": "node-sass --include-path client/sass client/sass/main.sass public/main.css",
-    "start-dev": "babel-watch server.js",
-    "start": "node server.js"
+    "start-dev": "babel-watch src/server.js",
+    "build-server": "babel src -d lib",
+    "build": "npm run build-server; npm run build-css; npm run build-client",
+    "start": "node lib/server.js"
   },
   "repository": {
     "type": "git",
@@ -39,6 +42,7 @@
     "babel-preset-react": "^6.11.1",
     "babel-watch": "^2.0.2",
     "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
     "sqlite3": "^3.1.4",
     "watchify": "^3.7.0"
   },

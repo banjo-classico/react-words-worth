@@ -3,7 +3,7 @@ import express from 'express'
 import http from 'http'
 import path from 'path'
 import IO from 'socket.io'
-import configureSocket from './src/configure-socket'
+import configureSocket from './configure-socket'
 
 dotenv.config()
 
@@ -12,12 +12,12 @@ const server = http.createServer(app)
 const port = process.env.PORT || 3000
 const io = IO(server)
 
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(path.join(__dirname, '../public')))
 
 configureSocket(io)
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/index.html'))
+  res.sendFile(path.join(__dirname, '../public/index.html'))
 })
 
 server.listen(port, () => {
