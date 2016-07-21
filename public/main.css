@@ -28,18 +28,17 @@ body {
     font-size: 14px; }
 
 #howto-container {
-  position: absolute;
-  z-index: 1;
-  width: 30%;
-  margin-left: 60%; }
+  align-self: flex-start; }
 
 #howto {
-  width: 100%;
-  padding: 10px;
-  height: 40vh;
+  width: 400px;
+  height: 400px;
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
-  font-size: 1rem; }
+  font-size: 1rem;
+  margin-left: 10px; }
+  #howto div {
+    padding: 70px 30px; }
 
 #input-div {
   width: 100%; }
@@ -72,7 +71,8 @@ body {
         border-radius: 4px;
         align-items: flex-end;
         justify-content: center;
-        color: white; }
+        color: white;
+        overflow-wrap: break-word; }
 
 #chartbox {
   width: 100%; }
@@ -99,9 +99,11 @@ body {
   display: flex;
   width: 95%;
   padding: 0 5px;
+  flex-direction: row-reverse;
   justify-content: space-between;
   background-color: #f6fff6;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); }
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  overflow: scroll; }
   #player #score {
     font-size: 1.5rem;
     font-weight: bold;
@@ -109,7 +111,7 @@ body {
   #player #name {
     font-size: 1rem;
     margin: 3px;
-    align-item: flex-end; }
+    align-items: flex-end; }
 
 #box0 {
   background-color: tomato; }

@@ -3,7 +3,8 @@ import clone from 'clone'
 const INITIAL_STATE = {
   random: '',
   used: [],
-  players: {}
+  players: {},
+  howto: false
 }
 
 export default function reducer (state=INITIAL_STATE, action) {
@@ -41,6 +42,10 @@ export default function reducer (state=INITIAL_STATE, action) {
         return newState.players[key].score = 0
       })
       newState.used = []
+      break
+
+    case 'TOGGLE_HOWTO' :
+      newState.howto = !newState.howto
       break
   }
   return newState

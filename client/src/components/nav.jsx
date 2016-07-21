@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import HowTo from './howto.jsx'
 
 class Nav extends Component {
   constructor(props) {
     super(props)
-    this.state = {howto: false}
   }
 
   handleClick() {
@@ -13,7 +11,7 @@ class Nav extends Component {
   }
 
   toggleHowTo() {
-    this.setState({howto: !this.state.howto})
+    this.props.toggleHowTo()
   }
 
   render() {
@@ -28,9 +26,6 @@ class Nav extends Component {
             </div>
           </div>
         </div>
-        {
-        this.state.howto ? <HowTo /> : null
-        }
       </div>
       )
   }

@@ -28,12 +28,15 @@ class Main extends Component {
       {
         (Object.keys(this.props.players).includes(this.props.socket.id))
         ? <div>
-            <Nav reset={ this.props.reset } getRandom={this.props.getRandom }/>
+            <Nav reset={ this.props.reset } 
+                 getRandom={this.props.getRandom }
+                 toggleHowTo={ this.props.toggleHowTo }/>
             <div id='main'>
               <Players players={ this.props.players } keys={ Object.keys(this.props.players) } />
               <UsedWords used={ this.props.used } />
               <Centre random={ this.props.random } 
-                      players={ this.props.players }/>
+                      players={ this.props.players }
+                      howto={ this.props.howto}/>
             </div>
             <div id='input-div'>
               <form onSubmit={ this.handleSubmit.bind(this) }>
@@ -55,7 +58,8 @@ function mapStateToProps(state) {
   return {
     players: state.players,
     random: state.random,
-    used: state.used
+    used: state.used,
+    howto: state.howto
   }
 }
 

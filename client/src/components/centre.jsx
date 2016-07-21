@@ -8,7 +8,8 @@ class Centre extends Component {
     return (
       <div className='centrebox'>
         <div><h1>{ this.props.random }</h1></div>
-        <Chart players={ this.props.players }/>
+        <Chart players={ this.props.players }
+               howto={ this.props.howto }/>
       </div>
       )
   }

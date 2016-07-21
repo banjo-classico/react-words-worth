@@ -4,8 +4,8 @@ class Player extends Component {
   render() {
     return (
       <div id='player'>
-        <p id='name'>{ this.props.player.name }</p>
         <p id='score'>{ this.props.player.score }</p>
+        <p id='name'>{ this.props.player.name }</p>
       </div>
       )
   }

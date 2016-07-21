@@ -71,3 +71,9 @@ export function reset() {
   }
 }
 
+export function toggleHowTo() {
+  return {
+    type: 'TOGGLE_HOWTO'
+  }
+}
+

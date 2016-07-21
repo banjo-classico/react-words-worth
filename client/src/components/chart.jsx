@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import HowTo from './howto.jsx'
+
 
 class Chart extends Component {
 
@@ -11,6 +13,9 @@ class Chart extends Component {
     return (
       <div id='chartbox'>
         <div className='chart' style={{width: '400px', height: '400px'}} >
+          {
+            this.props.howto ? <HowTo /> : null
+          }
           {
             Object.keys(this.props.players).map((key, i) => {
               return <div id={ 'box' + i } 
