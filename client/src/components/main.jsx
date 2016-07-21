@@ -9,6 +9,18 @@ import Nav from './nav.jsx'
 
 class Main extends Component {
 
+  handleSubmit(e) {
+    e.preventDefault()
+    var word = document.getElementById('game-input').value
+    console.log(word)
+    if (!this.props.used.includes(word)) {
+      this.props.addUsedWord(word)
+      this.props.compare(word, this.props.random, this.props.socket.id)
+      } else { null }
+
+    document.getElementById('game-input').value = ''
+  }
+
   render() {
 
     return (
@@ -19,14 +31,14 @@ class Main extends Component {
             <Nav reset={ this.props.reset } getRandom={this.props.getRandom }/>
             <div id='main'>
               <Players players={ this.props.players } keys={ Object.keys(this.props.players) } />
-              <Centre random={ this.props.random } 
-                      addUsedWord={ this.props.addUsedWord } 
-                      compare={ this.props.compare }
-                      used={ this.props.used }
-                      id={ this.props.socket.id }
-                      players={ this.props.players }/>
-
               <UsedWords used={ this.props.used } />
+              <Centre random={ this.props.random } 
+                      players={ this.props.players }/>
+            </div>
+            <div id='input-div'>
+              <form onSubmit={ this.handleSubmit.bind(this) }>
+                <input id='game-input' type='text' placeholder='make your guess here'></input>
+              </form>
             </div>
           </div>
         : <div>

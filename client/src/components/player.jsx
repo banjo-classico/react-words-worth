@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 class Player extends Component {
   render() {
     return (
-      <div>
-        <h4>{ this.props.player.name }</h4>
-        <h4>{ this.props.player.score }</h4>
+      <div id='player'>
+        <p id='name'>{ this.props.player.name }</p>
+        <p id='score'>{ this.props.player.score }</p>
       </div>
       )
   }

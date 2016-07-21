@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 class UsedWords extends Component {
+  
   render() {
     return (
       <div id='used-box'>

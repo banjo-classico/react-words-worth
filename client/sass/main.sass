@@ -11,9 +11,10 @@ body
 #namebox
   border: 1px solid black
   border-radius: 4px
-  width: 200px
+  width: 160px
   padding: 20px
   font-size: 20px
+  overflow: none
 
 #nav
   display: flex
@@ -21,24 +22,61 @@ body
 
   .nav-title
 
-  .new-game-btn 
+  .new-game-btn, .howto-btn
     width: 150px
     height: 50px
+    margin: 0 2px
     border: none
     background-color: #333
     color: white
     font-size: 14px
+
+
+#howto-container
+  position: absolute
+  z-index: 1
+  width: 30%
+  margin-left: 60%
+
+#howto 
+  width: 100%
+  padding: 10px
+  height: 40vh
+  background-color: rgba(0,0,0,.8)
+  color: white
+  font-size: 1rem
+
+#input-div
+  width: 100%
+
+  #game-input
+      font-size: 2.5rem
+      margin-top: 20px
+      width: 400px
+      padding: 10px
+      border: 1px solid #999
+      border-radius: 4px
 
 #main
   display: flex
   justify-content: space-between
 
   .centrebox
+    width: 60%
+    height: 70vh
+    padding: 1%
+    border: .5px solid #999
+    background-color: #e6e8e5
+
 
     .chart 
+      margin: auto
       display: flex
       justify-content: space-around
       align-items: flex-end
+      border: 1px solid #999
+      background-color: #f6fff6
+      overflow: hidden
 
       .scorediv 
         display:flex
@@ -47,28 +85,56 @@ body
         justify-content: center
         color: white
 
-    #game-input
-      font-size: 14px
-      margin-top: 10px
-      width: 150px
-      padding: 10px
-      border: 1px solid black
-      border-radius: 4px
+#chartbox
+  width: 100%
 
 #players-box, #used-box 
-  margin: 30px 100px
+  width: 20%
+  height: 70vh
+  padding: 1%
+  border: .5px solid #999
+  background-color: #e6e8e5
+  overflow: scroll
+
+  h1
+    font-size: 1.5rem
+    color: white
+    text-shadow: 1px 1px 1px rgba(0,0,0,.5)
+
+#used-box
+  p
+    font-size: 1rem
+    color: #666
+    margin: 3px
+
+#player
+  color: #666
+  display: flex
+  width: 95%
+  padding: 0 5px
+  justify-content: space-between
+  background-color: #f6fff6
+  box-shadow: 1px 1px 3px rgba(0,0,0,.3)
+
+  #score
+    font-size: 1.5rem
+    font-weight: bold
+    margin: 3px
+
+  #name
+    font-size: 1rem
+    margin: 3px
+    align-item: flex-end
+
 
 #box0 
   background-color: tomato
 
-
 #box1 
   background-color: gold
 
-
 #box2 
   background-color: blue
-
 
 #box3 
   background-color: teal
