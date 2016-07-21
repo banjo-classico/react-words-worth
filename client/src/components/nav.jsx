@@ -19,7 +19,7 @@ class Nav extends Component {
       <div className='container'>
         <div className='row'>
           <div id='nav'>
-            <h3 className='nav-title'>Word's Worth</h3>
+            <h3 className='nav-title' >Word's Worth</h3>
             <div>
               <button className='howto-btn' onMouseEnter={ this.toggleHowTo.bind(this) } onMouseLeave={ this.toggleHowTo.bind(this)}>How to play</button>
               <button className='new-game-btn' onClick={ this.handleClick.bind(this) }>New Game</button>
