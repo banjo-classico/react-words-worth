@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "watchify client/src/index.js -o public/bundle.js -dv",
     "build-css": "node-sass --include-path client/sass client/sass/main.sass public/main.css",
-    "start-dev": "babel-watch server.js"
+    "start-dev": "babel-watch server.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
