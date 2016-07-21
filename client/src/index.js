@@ -26,7 +26,7 @@ socket.on('remove', (id) => {
 })
 
 socket.on('update-score', (info) => {
-  store.dispatch(updateScore(info))
+  store.dispatch(updateScore(info, Object.keys(store.getState().players).length))
 })
 
 socket.on('random', (random) => {

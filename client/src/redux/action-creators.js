@@ -29,12 +29,13 @@ export function removePlayer(id) {
   }
 }
 
-export function updateScore(info) {
+export function updateScore(info, players) {
   return {
     type: 'UPDATE_SCORE',
     socket: false,
     id: info.id, 
-    score: info.score
+    score: info.score,
+    players
   }
 }
 

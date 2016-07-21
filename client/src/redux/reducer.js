@@ -30,7 +30,10 @@ export default function reducer (state=INITIAL_STATE, action) {
       break
 
     case 'UPDATE_SCORE' :
-      newState.players[action.id].score += action.score
+      var multiplier = 1
+      action.players > 2 ? multiplier = 2 : null
+      action.players > 4 ? multiplier = 3 : null
+      newState.players[action.id].score += action.score*multiplier
       break
 
     case 'ADD_USED_WORD' :
