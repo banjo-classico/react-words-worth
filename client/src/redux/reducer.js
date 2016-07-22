@@ -4,7 +4,8 @@ const INITIAL_STATE = {
   random: '',
   used: [],
   players: {},
-  howto: false
+  howto: false,
+  winner: {win: false, name: ''}
 }
 
 export default function reducer (state=INITIAL_STATE, action) {
@@ -49,6 +50,11 @@ export default function reducer (state=INITIAL_STATE, action) {
 
     case 'TOGGLE_HOWTO' :
       newState.howto = !newState.howto
+      break
+
+    case 'DISPLAY_WINNER' :
+      newState.winner.win = true
+      newState.winner.name = action.name 
       break
   }
   return newState

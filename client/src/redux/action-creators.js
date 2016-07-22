@@ -78,3 +78,11 @@ export function toggleHowTo() {
   }
 }
 
+export function setWinner(name) {
+  return {
+    type: 'DISPLAY_WINNER',
+    name, 
+    socket: true
+  }
+}
+

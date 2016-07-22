@@ -5,6 +5,7 @@ import Players from './players.jsx'
 import Centre from './centre.jsx'
 import UsedWords from './used-words.jsx'
 import Nav from './nav.jsx'
+import Winner from './winner.jsx'
 
 
 class Main extends Component {
@@ -22,7 +23,6 @@ class Main extends Component {
   }
 
   render() {
-
     return (
       <div>
       {
@@ -32,7 +32,16 @@ class Main extends Component {
                  getRandom={this.props.getRandom }
                  toggleHowTo={ this.props.toggleHowTo }/>
             <div id='main'>
-              <Players players={ this.props.players } keys={ Object.keys(this.props.players) } />
+              {
+                Object.keys(this.props.players).map((key) => {
+                  return this.props.players[key].score > 99 ? <Winner name={ this.props.players[key].name } 
+                                                  reset={ this.props.reset } 
+                                                  getRandom={ this.props.getRandom} /> : null
+                })
+              }
+              <Players players={ this.props.players } 
+                       keys={ Object.keys(this.props.players) }
+                       setWinner={ this.props.setWinner } />
               <UsedWords used={ this.props.used } />
               <Centre random={ this.props.random } 
                       players={ this.props.players }
@@ -59,7 +68,8 @@ function mapStateToProps(state) {
     players: state.players,
     random: state.random,
     used: state.used,
-    howto: state.howto
+    howto: state.howto,
+    winner: state.winner
   }
 }
 
